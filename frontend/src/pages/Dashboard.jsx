@@ -220,7 +220,7 @@ const Dashboard = () => {
               </div>
               <div className="ml-3 sm:ml-4">
                 <p className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
-                  {Math.round(stats.totalDistanFceTraveled || 0)} km
+                  {Math.round(stats.totalDistanceTraveled || 0)} km
                 </p>
                 <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                   Distance Traveled
@@ -305,17 +305,17 @@ const Dashboard = () => {
               {predictions.map((prediction, index) => (
                 <div
                   key={prediction.id || index}
-                  className="border border-gray-200 rounded-lg p-3 sm:p-4 bg-white hover:shadow-md transition-shadow"
+                  className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 sm:p-4 bg-white dark:bg-gray-700 hover:shadow-md transition-shadow"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 space-y-2 sm:space-y-0">
                     <div className="flex items-center">
                       <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-600 rounded-full mr-2 sm:mr-3"></div>
                       <div>
-                        <p className="text-sm sm:text-base font-medium text-gray-900">
+                        <p className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">
                           {prediction.predictionData?.area || "Area"},{" "}
                           {prediction.predictionData?.road || "Road"}
                         </p>
-                        <p className="text-xs sm:text-sm text-gray-600">
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                           {formatDate(prediction.timestamp)}
                         </p>
                       </div>
@@ -342,10 +342,10 @@ const Dashboard = () => {
 
                   {/* Prediction Analytics */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3">
-                    <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
+                    <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-2 sm:p-3">
                       <div className="flex items-center">
                         <svg
-                          className="w-4 h-4 text-red-600 mr-2"
+                          className="w-4 h-4 text-red-600 dark:text-red-400 mr-2"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -358,18 +358,18 @@ const Dashboard = () => {
                           />
                         </svg>
                         <div>
-                          <p className="text-xs text-gray-600">Est. Delay</p>
-                          <p className="text-sm sm:text-base font-semibold text-gray-900">
+                          <p className="text-xs text-gray-600 dark:text-gray-400">Est. Delay</p>
+                          <p className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white">
                             {prediction.predictionData?.estimatedDelay || "0-3"}{" "}
                             min
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
+                    <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-2 sm:p-3">
                       <div className="flex items-center">
                         <svg
-                          className="w-4 h-4 text-orange-600 mr-2"
+                          className="w-4 h-4 text-orange-600 dark:text-orange-400 mr-2"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -382,8 +382,8 @@ const Dashboard = () => {
                           />
                         </svg>
                         <div>
-                          <p className="text-xs text-gray-600">Severity</p>
-                          <p className="text-sm sm:text-base font-semibold text-gray-900">
+                          <p className="text-xs text-gray-600 dark:text-gray-400">Severity</p>
+                          <p className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white">
                             {prediction.predictionData?.severity || "Low"}
                           </p>
                         </div>
@@ -392,7 +392,7 @@ const Dashboard = () => {
                   </div>
 
                   {/* Additional Analytics */}
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs text-gray-500 bg-gray-50 rounded-lg p-2 space-y-1 sm:space-y-0">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800 rounded-lg p-2 space-y-1 sm:space-y-0">
                     <div className="flex items-center">
                       <svg
                         className="w-3 h-3 mr-1"
@@ -444,16 +444,16 @@ const Dashboard = () => {
 
         {/* Insights Section */}
         {analytics && (analytics.mostUsedRoute || analytics.preferredTimeSlot) && (
-          <div className="mt-6 sm:mt-8 bg-white rounded-lg shadow-lg p-4 sm:p-6">
-            <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <div className="mt-6 sm:mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6">
+            <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
               Travel Insights
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {analytics.mostUsedRoute && (
-                <div className="bg-blue-50 p-3 sm:p-4 rounded-lg">
+                <div className="bg-blue-50 dark:bg-blue-900/30 p-3 sm:p-4 rounded-lg">
                   <div className="flex items-center mb-2">
                     <svg
-                      className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mr-2"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400 mr-2"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -465,21 +465,21 @@ const Dashboard = () => {
                         d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m-6 3l6-3"
                       />
                     </svg>
-                    <h3 className="text-sm sm:text-base font-semibold text-blue-900">
+                    <h3 className="text-sm sm:text-base font-semibold text-blue-900 dark:text-blue-200">
                       Most Used Route
                     </h3>
                   </div>
-                  <p className="text-sm sm:text-base text-blue-800">
+                  <p className="text-sm sm:text-base text-blue-800 dark:text-blue-300">
                     {analytics.mostUsedRoute.replace("-", " → ")}
                   </p>
                 </div>
               )}
 
               {analytics.preferredTimeSlot && (
-                <div className="bg-green-50 p-3 sm:p-4 rounded-lg">
+                <div className="bg-green-50 dark:bg-green-900/30 p-3 sm:p-4 rounded-lg">
                   <div className="flex items-center mb-2">
                     <svg
-                      className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 dark:text-green-400 mr-2"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -491,11 +491,11 @@ const Dashboard = () => {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    <h3 className="text-sm sm:text-base font-semibold text-green-900">
+                    <h3 className="text-sm sm:text-base font-semibold text-green-900 dark:text-green-200">
                       Preferred Travel Time
                     </h3>
                   </div>
-                  <p className="text-sm sm:text-base text-green-800">
+                  <p className="text-sm sm:text-base text-green-800 dark:text-green-300">
                     {analytics.preferredTimeSlot}
                   </p>
                 </div>
