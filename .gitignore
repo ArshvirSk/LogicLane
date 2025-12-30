@@ -51,7 +51,7 @@ jspm_packages/
 .env.production.local
 
 # Firebase configuration (contains sensitive API keys)
-frontend/src/services/firebase.js
+# frontend/src/services/firebase.js
 
 # Python
 __pycache__/
