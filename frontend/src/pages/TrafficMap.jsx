@@ -622,7 +622,7 @@ const RouteDisplay = ({ startCoords, endCoords, routeData, hideMarkers = false }
             // Make ML prediction for this segment
             try {
               const predictionResponse = await fetch(
-                "http://localhost:5000/api/predict",
+                "https://logiclane.onrender.com/api/predict",
                 {
                   method: "POST",
                   headers: {
@@ -1205,7 +1205,7 @@ const TrafficMap = () => {
 
             // Trigger route calculation
             const routeResponse = await fetch(
-              "http://localhost:5000/api/routes",
+              "https://logiclane.onrender.com/api/routes",
               {
                 method: "POST",
                 headers: {
@@ -1301,7 +1301,7 @@ const TrafficMap = () => {
       const destination = `${predictionData.area}, ${predictionData.road}`;
 
       // Get route data from backend API
-      const routeResponse = await fetch("http://localhost:5000/api/routes", {
+      const routeResponse = await fetch("https://logiclane.onrender.com/api/routes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1523,7 +1523,7 @@ const TrafficMap = () => {
       setIsLoading(true);
       toast.info("Optimizing route for multiple waypoints...");
 
-      const response = await fetch("http://localhost:5000/api/routes/optimize-waypoints", {
+      const response = await fetch("https://logiclane.onrender.com/api/routes/optimize-waypoints", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ waypoints })
@@ -1552,7 +1552,7 @@ const TrafficMap = () => {
   const fetchAlternativeRoutes = async (origin, destination) => {
     try {
       // Fetch up to 3 alternative routes from OSRM
-      const response = await fetch("http://localhost:5000/api/routes/alternatives", {
+      const response = await fetch("https://logiclane.onrender.com/api/routes/alternatives", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
