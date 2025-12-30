@@ -103,5 +103,3 @@ temp/
 # Vite specific
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-./services/firebase.js
