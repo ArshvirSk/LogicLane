@@ -1,7 +1,11 @@
 {
   "name": "logiclane-frontend",
-  "private": true,
+  "description": "Frontend application for LogicLane - ML-powered traffic congestion prediction",
   "version": "1.0.0",
+  "author": "LogicLane Team",
+  "license": "MIT",
+  "homepage": "https://github.com/LogicLane/Smart-City-Rush-Hour#readme",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host",

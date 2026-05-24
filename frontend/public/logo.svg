@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <linearGradient id="roadGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312E81" />
+      <stop offset="100%" stop-color="#4C1D95" />
+    </linearGradient>
+  </defs>
+  <!-- Background Shield/Tile -->
+  <rect width="512" height="512" rx="128" fill="#111827" />
+  
+  <!-- Left L (Road segment 1) -->
+  <path d="M 160 140 L 160 372 C 160 388 172 400 188 400 L 352 400" 
+        fill="none" 
+        stroke="url(#roadGradientDark)" 
+        stroke-width="56" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+        
+  <!-- Right L (Road segment 2, overlapping) -->
+  <path d="M 230 112 L 230 284 C 230 300 242 312 258 312 L 400 312" 
+        fill="none" 
+        stroke="url(#roadGradient)" 
+        stroke-width="56" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+        
+  <!-- Center dashed line representing ML nodes / lanes -->
+  <circle cx="230" cy="180" r="8" fill="#38BDF8" />
+  <circle cx="230" cy="230" r="8" fill="#38BDF8" />
+  <circle cx="310" cy="312" r="8" fill="#38BDF8" />
+  <circle cx="360" cy="312" r="8" fill="#38BDF8" />
+</svg>

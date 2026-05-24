@@ -9,7 +9,7 @@ export const config = {
         timeout: 15000,
     },
     openWeather: {
-        apiKey: import.meta.env.VITE_OPENWEATHER_API_KEY || 'bb1ae91edbd801c0a95f4a93b14f7a71',
+        apiKey: import.meta.env.VITE_OPENWEATHER_API_KEY,
         baseUrl: 'https://api.openweathermap.org/data/2.5',
     },
     app: {

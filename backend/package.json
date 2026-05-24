@@ -17,6 +17,7 @@
   ],
   "author": "LogicLane Team",
   "license": "MIT",
+  "homepage": "https://github.com/LogicLane/Smart-City-Rush-Hour#readme",
   "dependencies": {
     "axios": "^1.12.2",
     "compression": "^1.7.4",

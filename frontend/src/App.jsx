@@ -9,6 +9,7 @@ import Signup from "./components/Signup";
 import ToastContainer from "./components/Toast";
 import UserProfile from "./components/UserProfile";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import TrafficMap from "./pages/TrafficMap";
@@ -36,12 +37,12 @@ function App() {
               <ToastContainer />
               <Routes>
                 {/* Public routes */}
+                <Route path="/" element={<Landing />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
 
                 {/* Protected routes */}
-                <Route path="/" element={<ProtectedLayout><TrafficMap /></ProtectedLayout>} />
                 <Route path="/dashboard" element={<ProtectedLayout><Dashboard /></ProtectedLayout>} />
                 <Route path="/traffic-map" element={<ProtectedLayout><TrafficMap /></ProtectedLayout>} />
                 <Route path="/profile" element={<ProtectedLayout><UserProfile /></ProtectedLayout>} />
